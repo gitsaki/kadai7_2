@@ -21,11 +21,17 @@ def feedback(correct_number, ask):
             print("Hint: The correct number is lower.")
 
 def game():
+    max_attempts = 10
+    attempts = 0
     correct_number = random_number()
-    while True:
+
+    while attempts < max_attempts:
         guess = user_input()
+        attempts += 1
         feedback(correct_number, guess)
-        if guess == correct_number:
+        print(f"Attempts: {max_attempts-attempts}")
+        if attempts == max_attempts and guess != correct_number:
+            print("Game over!")
             break
 
 if __name__ == "__main__":
