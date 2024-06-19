@@ -4,11 +4,12 @@ def random_number():
     return random.randint(100,999)
 
 def user_input():
-    ask = int(input("Enter a 3-digit number: "))
-    if 100 <= ask <= 999:
-        return ask
-    else:
-        print("Please enter a 3-digit number.")
+    while True:
+        ask = int(input("Enter a 3-digit number: "))
+        if 100 <= ask <= 999:
+            return ask
+        else:
+            print("Please enter a 3-digit number.")
 
 def feedback(correct_number, ask):
     if ask == correct_number:
@@ -21,8 +22,11 @@ def feedback(correct_number, ask):
 
 def game():
     correct_number = random_number()
-    guess = user_input()
-    feedback(correct_number, guess)
+    while True:
+        guess = user_input()
+        feedback(correct_number, guess)
+        if guess == correct_number:
+            break
 
 if __name__ == "__main__":
     game()
