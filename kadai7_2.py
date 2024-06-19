@@ -1,6 +1,6 @@
 import random
 
-def randomnumber():
+def random_number():
     return random.rondint(100,999)
 
 def input():
@@ -9,4 +9,13 @@ def input():
         return ask
     else:
         print("Please enter a 3-digit number.")
-  
+
+def feedback(random_number, ask):
+    if ask == random_number:
+        print("Correct!")
+    else:
+        if ask < random_number:
+            print("Hint: The correct number is higher.")
+        else:
+            print("Hint: The correct number is lower.")
+            
